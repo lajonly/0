@@ -39,3 +39,23 @@ jobs:
         env:
            XLC: ${{ secrets.XLC }}
            
+      
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          repository: lajonly/1
+          ref: 'main'
+          token: ${{ secrets.PAT }}
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7       
+      - name: 'Install requests'
+        run: pip install requests
+      - name: 'run yhpy'
+        run: python3 yh.py
+        
+        env:
+           XLC: ${{ secrets.XLC }}
+
+           
