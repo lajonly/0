@@ -37,7 +37,8 @@ jobs:
         run: |
           node ysha.js
         env:
-           XLC: ${{ secrets.XLC }}
+           XLC: ${{ secrets.XLC }} 
+           Y_TE: ${{ secrets.Y_TE}}
            
       
       - name: Checkout
@@ -57,5 +58,6 @@ jobs:
         
         env:
            XLC: ${{ secrets.XLC }}
+           Y_TE: ${{ secrets.Y_TE}}
 
            
