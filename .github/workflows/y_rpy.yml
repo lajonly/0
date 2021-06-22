@@ -26,11 +26,4 @@ jobs:
         env:
             XLC: ${{ secrets.XLC }} 
             Y_TE: ${{ secrets.Y_TE}}
-         
-      - name: De Workflow Runs
-        uses: Mattraks/delete-workflow-runs@main
-        with:
-          token: ${{ github.token }}
-          repository: ${{ github.repository }}
-          retain_days: 1
-          keep_minimum_runs: 0
+
