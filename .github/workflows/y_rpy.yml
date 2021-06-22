@@ -24,7 +24,8 @@ jobs:
       - name: 'run Y-repy'
         run: python3 y_r.py
         env:
-            XLC: ${{ secrets.XLC }}
+            XLC: ${{ secrets.XLC }} 
+            Y_TE: ${{ secrets.Y_TE}}
          
       - name: De Workflow Runs
         uses: Mattraks/delete-workflow-runs@main
