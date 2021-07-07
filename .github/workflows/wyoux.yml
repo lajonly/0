@@ -1,4 +1,4 @@
-name: y_rpy
+name: wyoux-py
 on:
   workflow_dispatch:
   schedule:
