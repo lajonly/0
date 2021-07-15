@@ -59,7 +59,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: 'run ttx'
+      - name: 'run tn'
         run: |
            node txnw.js
         env:
