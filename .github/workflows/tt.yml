@@ -45,30 +45,7 @@ jobs:
           repository: lajonly/1
           ref: 'main'
           token: ${{ secrets.PAT }}
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Cache node_modules
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
-      - name: npm install
-        run: |
-          npm install
-      - name: 'run tn'
-        run: |
-           node txnw.js
-        env:
-          TXNEWS_SIGN: ${{ secrets.TXNEWS_SIGN }}
-          TXNEWS_COOKIE: ${{ secrets.TXNEWS_COOKIE }}
-          TXNEWS_VIDEO: ${{ secrets.TXNEWS_VIDEO }}
-          XLC: ${{ secrets.XLC }}
-          GITHUB: ${{ secrets.GITHUB }}      
-          EFORK: ${{ secrets.EFORK }}
+
       - name: De Workflow Runs
         uses: Mattraks/delete-workflow-runs@main
         with:
