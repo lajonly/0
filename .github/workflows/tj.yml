@@ -61,22 +61,7 @@ jobs:
           SYNCURL: qczjspeed.js
           XLC: ${{ secrets.XLC }}
           GITHUB: ${{ secrets.GITHUB }}
-          EFORK: ${{ secrets.EFORK }}
-
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          repository: lajonly/1
-          ref: 'main'
-          token: ${{ secrets.PAT }}
-
-      - name: De Workflow Runs
-        uses: Mattraks/delete-workflow-runs@main
-        with:
-          token: ${{ github.token }}
-          repository: ${{ github.repository }}
-          retain_days: 1
-          keep_minimum_runs: 0 
+          EFORK: ${{ secrets.EFORK }} 
   dispatch:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
@@ -89,3 +74,11 @@ jobs:
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.PAT }}
+
+      - name: De Workflow Runs
+        uses: Mattraks/delete-workflow-runs@main
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: 1
+          keep_minimum_runs: 0
