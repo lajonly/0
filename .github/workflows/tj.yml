@@ -64,18 +64,6 @@ jobs:
           XLC: ${{ secrets.XLC }}
           GITHUB: ${{ secrets.GITHUB }}
           EFORK: ${{ secrets.EFORK }} 
-  dispatch:
-    runs-on: ubuntu-latest
-    steps:
-      - name: ' wait'
-        run: |
-          sleep 2m
-          sleep $(($RANDOM%5))
-      - name: Repository Dispatch
-        uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.PAT }}
-          event-type: tj
           
       - name: De Workflow Runs
         uses: Mattraks/delete-workflow-runs@main
@@ -84,3 +72,16 @@ jobs:
           repository: ${{ github.repository }}
           retain_days: 1
           keep_minimum_runs: 0
+
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ' wait'
+        run: |
+          sleep 3m
+          sleep $(($RANDOM%5))
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.PAT }}
+          event-type: tj
