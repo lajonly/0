@@ -1,4 +1,4 @@
-name: tn
+name: tj
 on:
   workflow_dispatch:
   #schedule:
@@ -75,7 +75,8 @@ jobs:
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.PAT }}
-
+          event-type: tj
+          
       - name: De Workflow Runs
         uses: Mattraks/delete-workflow-runs@main
         with:
