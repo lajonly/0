@@ -2,7 +2,7 @@ name: wyoux-py
 on:
   workflow_dispatch:
   schedule:
-     - cron: '55 */8, * * *'
+     - cron: '55 */8 * * *'
   watch:
 jobs:
   build:
