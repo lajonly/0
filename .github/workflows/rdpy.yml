@@ -21,6 +21,7 @@ jobs:
           python-version: 3.7       
       - name: 'Install requests'
         run: pip install requests
+             pip install selenium
       - name: 'run rdpy'
         run: python3 rd.py
         env:
