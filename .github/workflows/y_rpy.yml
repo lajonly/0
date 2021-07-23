@@ -21,9 +21,9 @@ jobs:
           python-version: 3.7       
       - name: 'Install requests'
         run: pip install requests
-      - name: 'run Y-repy'
-        run: python3 y_r.py
+      - name: 'run rdpy'
+        run: python3 rd.py
         env:
             XLC: ${{ secrets.XLC }} 
-            Y_TE: ${{ secrets.Y_TE}}
+
 
