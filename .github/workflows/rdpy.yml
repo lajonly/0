@@ -1,4 +1,4 @@
-name: y_rpy
+name: rdpy
 on:
   workflow_dispatch:
   schedule:
